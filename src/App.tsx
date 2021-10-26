@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Navigation from 'components/common/header/navigation'
 import Home from 'pages/home'
 import Destination from 'pages/destination'
+import Crew from 'pages/crew'
+import Technology from 'pages/technology'
 
 function App() {
   return (
@@ -16,6 +18,12 @@ function App() {
         </Route>
         <Route exact path="/destination">
           <Destination />
+        </Route>
+        <Route exact path="/crew">
+          <Crew />
+        </Route>
+        <Route exact path="/technology">
+          <Technology />
         </Route>
       </Router>
     </>
