@@ -37,9 +37,11 @@ export default function useMediaQuery(query: string): boolean {
 }
 
 const size: Dictionary = {
-  sm: 375,
+  // my breakpoints were wrong so I had to fix them.
+  // now I'm using Bootstrap breakpoints as reference
+  sm: 576,
   md: 768,
-  lg: 1200,
+  lg: 992,
 }
 
 export const device: MediaQueries = {
