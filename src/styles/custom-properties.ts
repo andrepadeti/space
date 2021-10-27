@@ -6,6 +6,7 @@ export const customProperties = css`
     --c-dark: 230 35% 7%;
     --c-light: 231 77% 90%;
     --c-white: 0 0% 100%;
+    --c-gray: #979797;
 
     /* font-sizes */
     --fs-1: 9.375rem;

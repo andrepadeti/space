@@ -1,14 +1,14 @@
 import * as React from 'react'
 import Title from 'components/common/title'
-import Stuff from 'components/crew/stuff'
+import CrewMember from 'components/crewMember'
 
-const Destination = () => {
+const Crew = () => {
   return (
-    <div>
+    <>
       <Title title="crew" />
-      <Stuff />
-    </div>
+      <CrewMember />
+    </>
   )
 }
 
-export default Destination
+export default Crew
