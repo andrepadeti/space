@@ -12,12 +12,10 @@ const Title = ({ number, title }: TitleProps) => {
   const { isDesktop, isTablet, isMobile } = useMediaQuery()
 
   return (
-    <div>
       <S.Text isDesktop={isDesktop} isTablet={isTablet} isMobile={isMobile}>
         <S.Number>{number}</S.Number>
         {title}
       </S.Text>
-    </div>
   )
 }
 
