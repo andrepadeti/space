@@ -8,7 +8,7 @@ import desktopBackground from 'assets/technology/background-technology-desktop.j
 import tabletBackground from 'assets/technology/background-technology-tablet.jpg'
 import mobileBackground from 'assets/technology/background-technology-mobile.jpg'
 
-const Destination = () => {
+const Technology = () => {
   const { isDesktop, isTablet, isMobile } = useMediaQuery()
   const [tabIndex, setTabIndex] = React.useState(0)
   const { technology } = data
@@ -64,4 +64,4 @@ const Destination = () => {
   )
 }
 
-export default Destination
+export default Technology
