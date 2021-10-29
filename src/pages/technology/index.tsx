@@ -9,11 +9,10 @@ import tabletBackground from 'assets/technology/background-technology-tablet.jpg
 import mobileBackground from 'assets/technology/background-technology-mobile.jpg'
 
 const Technology = () => {
-  const { isDesktop, isTablet, isMobile } = useMediaQuery()
+  const mq = useMediaQuery()
+  const { isDesktop, isTablet, isMobile } = mq
   const [tabIndex, setTabIndex] = React.useState(0)
   const { technology } = data
-
-  // console.log(technology[tabIndex].images.portrait.substring(2))
 
   React.useEffect(() => {
     const url = isDesktop
@@ -32,30 +31,37 @@ const Technology = () => {
   }
 
   return (
-    <S.Grid>
+    <S.Grid mq={mq}>
       <S.PageTitle number="03" title="space launch 101" />
-      <S.SwitcherContainer>
+      <S.SwitcherContainer mq={mq}>
         {technology.map((item, index) => (
           <S.Switcher
             key={'tech' + index}
             onClick={() => handleClick(index)}
             active={index === tabIndex}
+            mq={mq}
           >
             {index + 1}
           </S.Switcher>
         ))}
       </S.SwitcherContainer>
-      <S.ContentContainer>
-        <S.Subtitle>The terminology...</S.Subtitle>
-        <S.Title>{technology[tabIndex].name}</S.Title>
-        <S.Description>{technology[tabIndex].description}</S.Description>
+      <S.ContentContainer mq={mq}>
+        <S.Subtitle mq={mq}>
+          The terminology...
+        </S.Subtitle>
+        <S.Title mq={mq}>
+          {technology[tabIndex].name}
+        </S.Title>
+        <S.Description mq={mq}>
+          {technology[tabIndex].description}
+        </S.Description>
       </S.ContentContainer>
-      <S.ImageContainer>
+      <S.ImageContainer mq={mq}>
         <img
           src={
             isDesktop
-              ? 'https://unsplash.it/515/527'
-              : 'https://unsplash.it/768/310'
+              ? require(`../../${technology[tabIndex].images.portrait.substring(2)}`).default
+              : require(`../../${technology[tabIndex].images.landscape.substring(2)}`).default
           }
           alt=""
         />
