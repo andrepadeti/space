@@ -1,39 +1,59 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import PTitle from 'components/common/title'
 
-export const Grid = styled.div`
-  margin-block-start: 2em;
+interface CommonProps {
+  mq: { isMobile: boolean; isTablet: boolean; isDesktop: boolean }
+}
+
+export const Grid = styled.main<CommonProps>`
+  padding-block-start: 2em;
   display: grid;
   gap: 2em;
-  grid-template-areas: 
-    "title"
-    "image"
-    "switcher"
-    "content";
-
+  grid-template-areas:
+    'title'
+    'image'
+    'switcher'
+    'content';
   justify-items: center;
+
+  ${({ mq }) =>
+    mq.isDesktop &&
+    css`
+      grid-template-columns: 5rem 10rem 2fr 2fr;
+      grid-template-areas:
+        '. title title title'
+        '. switcher content image';
+      gap: 2rem 0;
+      justify-items: start;
+    `}
 `
 
 export const PageTitle = styled(PTitle)`
+  height: 5rem;
   grid-area: title;
 `
 
-export const SwitcherContainer = styled.div`
+export const SwitcherContainer = styled.div<CommonProps>`
+  /* justify-self: center; */
   grid-area: switcher;
   display: flex;
+  justify-content: center;
+  flex-direction: ${({ mq }) => (mq.isDesktop ? 'column' : 'row')};
   gap: 2em;
 `
 
-interface SwitcherProps {
+interface SwitcherProps extends CommonProps {
   active: boolean
+  size?: string
 }
 
-export const Switcher = styled.button<SwitcherProps>`
+export const Switcher = styled.button.attrs<SwitcherProps>(({ mq }) => ({
+  size: mq.isMobile ? '40px' : mq.isTablet ? '60px' : '80px',
+}))<SwitcherProps>`
   display: grid;
   place-content: center;
-  width: 2em;
-  aspect-ratio: 1;
-
+  width: ${({ size }) => size};
+  height: ${({ size }) => size};
   cursor: pointer;
 
   border-radius: 50%;
@@ -47,39 +67,44 @@ export const Switcher = styled.button<SwitcherProps>`
     props.active ? 'hsl(var(--c-white))' : 'hsl(var(--c-dark))'};
 `
 
-export const ContentContainer = styled.div`
+export const ContentContainer = styled.article<CommonProps>`
+  padding-inline: 1em;
   grid-area: content;
-  display: grid;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: ${({ mq }) => (mq.isDesktop ? 'center' : 'start')};
+  align-items: ${({ mq }) => (mq.isDesktop ? 'start' : 'center')};
 `
 
-export const Subtitle = styled.h3`
+export const Subtitle = styled.h3<CommonProps>`
   font-family: var(--ff-sans-cond);
-  font-size: var(--fs-8);
+  font-size: ${({ mq }) => (mq.isMobile ? '14px' : '16px')};
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  white-space: nowrap;
   color: hsl(var(--c-light) / 0.8);
 `
 
-export const Title = styled.h2`
+export const Title = styled.h2<CommonProps>`
   margin-block-end: 0.5em;
   font-family: var(--ff-serif);
-  font-size: var(--fs-5);
+  font-size: ${({ mq }) => (mq.isMobile ? '24px' : '40px')};
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 `
 
-export const Description = styled.p`
-  padding-inline: 1em;
-  text-align: center;
+export const Description = styled.p<CommonProps>`
+  text-align: ${({ mq }) => (mq.isDesktop ? 'start' : 'center')};
   font-family: var(--ff-sans-cond);
-  font-size: var(--fs-6);
+  font-size: ${({ mq }) =>
+    mq.isMobile ? '15px' : mq.isTablet ? '16px' : '18px'};
   font-weight: 400;
   color: hsl(var(--c-light) / 0.8);
 `
 
-export const ImageContainer = styled.div`
-    grid-area: image;
+export const ImageContainer = styled.div<CommonProps>`
+  grid-area: image;
+  justify-self: end;
 `
