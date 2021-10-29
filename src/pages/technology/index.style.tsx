@@ -5,11 +5,11 @@ export const Grid = styled.div`
   margin-block-start: 2em;
   display: grid;
   gap: 2em;
-  grid-template-areas: 
-    "title"
-    "image"
-    "switcher"
-    "content";
+  grid-template-areas:
+    'title'
+    'image'
+    'switcher'
+    'content';
 
   justify-items: center;
 `
@@ -81,5 +81,5 @@ export const Description = styled.p`
 `
 
 export const ImageContainer = styled.div`
-    grid-area: image;
+  grid-area: image;
 `
