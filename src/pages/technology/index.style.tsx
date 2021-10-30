@@ -104,7 +104,7 @@ export const Description = styled.p<CommonProps>`
   color: hsl(var(--c-light) / 0.8);
 `
 
-export const ImageContainer = styled.div<CommonProps>`
+export const ImageContainer = styled.div`
   grid-area: image;
   justify-self: end;
 `
