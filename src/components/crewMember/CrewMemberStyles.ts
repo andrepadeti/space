@@ -1,55 +1,56 @@
 import styled from 'styled-components'
+import Title from 'components/common/title'
 
 export const CrewMemberContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 
-  @media (min-width: 35rem) {
+  @media (min-width: 576px) {
   }
 
-  @media (min-width: 45rem) {
+  @media (min-width: 850px) {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+
     display: grid;
     grid-template-areas:
       'member image'
       'content image'
-      'switchers image';
+      'switchers image'
+      'empty image';
   }
 `
 
 export const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: -150px;
   margin-bottom: 32px;
-  margin-left: 10%;
-  margin-right: 10%;
   align-items: flex-end;
+  width: 100%;
   border-bottom: 1px solid var(--c-gray);
 
-  @media (min-width: 35rem) {
+  @media (min-width: 576px) {
     order: 4;
     margin-top: 0;
     border-bottom: 0;
   }
 
-  @media (min-width: 45rem) {
+  @media (min-width: 850px) {
     grid-area: image;
+    max-width: 570px;
   }
 `
 export const Image = styled.img`
-  width: 100%;
-  height: auto;
-  transform: scale(0.7);
-  transform-origin: 50% 100%;
+  width: 200px;
 
-  @media (min-width: 35rem) {
+  @media (min-width: 576px) {
     min-width: 28rem;
-    transform: scale(1);
   }
 
-  @media (min-width: 45rem) {
-    transform: translateY(-50px);
+  @media (min-width: 850px) {
+    margin-top: -150px;
   }
 `
 export const SwitchersList = styled.ul`
@@ -60,12 +61,13 @@ export const SwitchersList = styled.ul`
   list-style-type: none;
   margin-bottom: 27px;
 
-  @media (min-width: 35rem) {
+  @media (min-width: 576px) {
     order: 3;
   }
 
-  @media (min-width: 45rem) {
+  @media (min-width: 850px) {
     grid-area: switchers;
+    justify-content: left;
   }
 `
 export const Switcher = styled.li`
@@ -84,14 +86,14 @@ export const Member = styled.h3`
   justify-content: center;
   flex-wrap: wrap;
 
-  @media (min-width: 35rem) {
+  @media (min-width: 576px) {
     order: 1;
-    width: 28rem;
   }
 
-  @media (min-width: 45rem) {
+  @media (min-width: 850px) {
     grid-area: member;
-    max-width: 25rem;
+    max-width: 600px;
+    display: block;
   }
 `
 export const MemberPosition = styled.span`
@@ -106,12 +108,13 @@ export const MemberPosition = styled.span`
   color: hsl(var(--c-white));
   margin-bottom: 5px;
 
-  @media (min-width: 35rem) {
+  @media (min-width: 576px) {
     font-size: 1.5rem;
     margin-bottom: 20px;
   }
 
-  @media (min-width: 45rem) {
+  @media (min-width: 850px) {
+    text-align: left;
   }
 `
 export const MemberName = styled.span`
@@ -124,12 +127,13 @@ export const MemberName = styled.span`
   color: hsl(var(--c-white));
   margin-bottom: 10px;
 
-  @media (min-width: 35rem) {
+  @media (min-width: 576px) {
     font-size: 2.5rem;
     margin-bottom: 20px;
   }
 
-  @media (min-width: 45rem) {
+  @media (min-width: 850px) {
+    text-align: left;
   }
 `
 export const MemberDescription = styled.p`
@@ -138,20 +142,17 @@ export const MemberDescription = styled.p`
   line-height: 25px;
   text-align: center;
   color: hsl(var(--c-light));
-  padding-left: 10%;
-  padding-right: 10%;
 
-  @media (min-width: 35rem) {
+  @media (min-width: 576px) {
     order: 2;
-    min-width: 28rem;
+    min-width: 20rem;
     margin-bottom: 32px;
-    padding-left: 0;
-    padding-right: 0;
   }
 
-  @media (min-width: 45rem) {
+  @media (min-width: 850px) {
     grid-area: content;
-    max-width: 25rem;
+    max-width: 50%;
     text-align: left;
+    margin-bottom: 75px;
   }
 `

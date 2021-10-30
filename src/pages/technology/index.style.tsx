@@ -14,10 +14,6 @@ export const Grid = styled.main<CommonProps>`
     'image'
     'switcher'
     'content';
-<<<<<<< HEAD
-
-=======
->>>>>>> c1c20621d09e14bdcdb64a01cf2f1d163503f3a9
   justify-items: center;
 
   ${({ mq }) =>
@@ -108,12 +104,7 @@ export const Description = styled.p<CommonProps>`
   color: hsl(var(--c-light) / 0.8);
 `
 
-<<<<<<< HEAD
-export const ImageContainer = styled.div`
-  grid-area: image;
-=======
 export const ImageContainer = styled.div<CommonProps>`
   grid-area: image;
   justify-self: end;
->>>>>>> c1c20621d09e14bdcdb64a01cf2f1d163503f3a9
 `

@@ -8,7 +8,10 @@ import desktopBackground from 'assets/technology/background-technology-desktop.j
 import tabletBackground from 'assets/technology/background-technology-tablet.jpg'
 import mobileBackground from 'assets/technology/background-technology-mobile.jpg'
 
-const Technology = () => {
+const Technology = ({ onPath }) => {
+  React.useEffect(() => {
+    onPath(window.location.pathname)
+  }, [])
   const mq = useMediaQuery()
   const { isDesktop, isTablet, isMobile } = mq
   const [tabIndex, setTabIndex] = React.useState(0)
@@ -46,12 +49,8 @@ const Technology = () => {
         ))}
       </S.SwitcherContainer>
       <S.ContentContainer mq={mq}>
-        <S.Subtitle mq={mq}>
-          The terminology...
-        </S.Subtitle>
-        <S.Title mq={mq}>
-          {technology[tabIndex].name}
-        </S.Title>
+        <S.Subtitle mq={mq}>The terminology...</S.Subtitle>
+        <S.Title mq={mq}>{technology[tabIndex].name}</S.Title>
         <S.Description mq={mq}>
           {technology[tabIndex].description}
         </S.Description>
@@ -60,8 +59,12 @@ const Technology = () => {
         <img
           src={
             isDesktop
-              ? require(`../../${technology[tabIndex].images.portrait.substring(2)}`).default
-              : require(`../../${technology[tabIndex].images.landscape.substring(2)}`).default
+              ? require(`../../${technology[tabIndex].images.portrait.substring(
+                  2
+                )}`).default
+              : require(`../../${technology[
+                  tabIndex
+                ].images.landscape.substring(2)}`).default
           }
           alt=""
         />
