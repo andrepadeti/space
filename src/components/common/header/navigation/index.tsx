@@ -48,9 +48,7 @@ const Navigation = () => {
         {isDesktop ? <S.Line /> : null}
 
         <nav>
-          <S.MenuWrapper mq={mq}>
-            {renderNavigation()}
-          </S.MenuWrapper>
+          <S.MenuWrapper mq={mq}>{renderNavigation()}</S.MenuWrapper>
         </nav>
       </S.Container>
     )

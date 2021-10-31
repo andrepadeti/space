@@ -2,10 +2,10 @@ import * as React from 'react'
 import * as S from './crewStyles'
 import CrewMember from 'components/crewMember'
 
-const Crew = ({ onPath }) => {
+const Crew = ({ onPath }: any) => {
   React.useEffect(() => {
     onPath(window.location.pathname)
-  }, [])
+  }, [onPath])
 
   return (
     <S.CrewWrapper>
