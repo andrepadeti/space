@@ -3,6 +3,7 @@ import useMediaQuery from 'utils/media-query-all'
 import data from 'utils/data.json'
 
 import * as S from './index.style'
+import Image from 'components/technology/image'
 
 import desktopBackground from 'assets/technology/background-technology-desktop.jpg'
 import tabletBackground from 'assets/technology/background-technology-tablet.jpg'
@@ -55,19 +56,8 @@ const Technology = ({ onPath }) => {
           {technology[tabIndex].description}
         </S.Description>
       </S.ContentContainer>
-      <S.ImageContainer mq={mq}>
-        <img
-          src={
-            isDesktop
-              ? require(`../../${technology[tabIndex].images.portrait.substring(
-                  2
-                )}`).default
-              : require(`../../${technology[
-                  tabIndex
-                ].images.landscape.substring(2)}`).default
-          }
-          alt=""
-        />
+      <S.ImageContainer>
+        <Image index={tabIndex} />
       </S.ImageContainer>
     </S.Grid>
   )
