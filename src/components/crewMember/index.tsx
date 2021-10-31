@@ -2,30 +2,43 @@ import * as React from 'react'
 
 import * as S from './CrewMemberStyles'
 
-import member from 'assets/crew/image-douglas-hurley.webp'
+import data from 'utils/data.json'
 
 const CrewMember = () => {
+  const { crew } = data
+  const [selectedCrewMember, setSelectedCrewMember] = React.useState(0)
+
+  const handleSwitcher = (index: number) => {
+    setSelectedCrewMember(index)
+  }
+
   return (
     <S.CrewMemberContainer>
       <S.ImageContainer>
-        <S.Image src={member} width="177" height="222" />
+        <S.Image
+          src={
+            require(`../../${crew[selectedCrewMember].images.webp.substring(
+              2
+            )}`).default
+          }
+          width="177"
+          alt={`Astronaut ${crew[selectedCrewMember].name}`}
+        />
       </S.ImageContainer>
       <S.SwitchersList>
-        {/* here will be a map function */}
-        <S.Switcher className="active" />
-        <S.Switcher />
-        <S.Switcher />
-        <S.Switcher />
+        {crew.map((person, index) => (
+          <S.Switcher
+            key={person.name}
+            onClick={() => handleSwitcher(index)}
+            className={selectedCrewMember === index ? 'active' : ''}
+          />
+        ))}
       </S.SwitchersList>
       <S.Member>
-        <S.MemberPosition>Commander</S.MemberPosition>
-        <S.MemberName>Douglas Harley</S.MemberName>
+        <S.MemberPosition>{crew[selectedCrewMember].role}</S.MemberPosition>
+        <S.MemberName>{crew[selectedCrewMember].name}</S.MemberName>
       </S.Member>
-      <S.MemberDescription>
-        Douglas Gerald Hurley is an American engineer, former Marine Corps pilot
-        and former NASA astronaut. He launched into space for the third time as
-        commander of Crew Dragon Demo-2.
-      </S.MemberDescription>
+      <S.MemberDescription>{crew[selectedCrewMember].bio}</S.MemberDescription>
     </S.CrewMemberContainer>
   )
 }

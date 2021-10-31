@@ -1,9 +1,9 @@
-import styled, {css} from 'styled-components'
+import styled, { css } from 'styled-components'
 
 interface TextProps {
-  isMobile: boolean,
-  isTablet: boolean,
-  isDesktop: boolean,
+  isMobile: boolean
+  isTablet: boolean
+  isDesktop: boolean
 }
 
 export const Number = styled.span`
@@ -18,12 +18,18 @@ export const Text = styled.h1<TextProps>`
   font-family: var(--ff-sans-cond);
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
 
-  ${({ isTablet }) => isTablet && css`
-    font-size: var(--fs-6);
-  `}
+  ${({ isTablet }) =>
+    isTablet &&
+    css`
+      font-size: var(--fs-6);
+    `}
 
-  ${({ isDesktop }) => isDesktop && css`
-    font-size: var(--fs-5);
-  `}
+  ${({ isDesktop }) =>
+    isDesktop &&
+    css`
+      font-size: var(--fs-5);
+    `}
 `
