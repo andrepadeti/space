@@ -9,10 +9,10 @@ import desktopBackground from 'assets/technology/background-technology-desktop.j
 import tabletBackground from 'assets/technology/background-technology-tablet.jpg'
 import mobileBackground from 'assets/technology/background-technology-mobile.jpg'
 
-const Technology = ({ onPath }) => {
+const Technology = ({ onPath }: any) => {
   React.useEffect(() => {
     onPath(window.location.pathname)
-  }, [])
+  }, [onPath])
   const mq = useMediaQuery()
   const { isDesktop, isTablet, isMobile } = mq
   const [tabIndex, setTabIndex] = React.useState(0)

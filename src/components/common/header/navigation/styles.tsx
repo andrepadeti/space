@@ -6,7 +6,7 @@ interface CommonProps {
 }
 
 export const Container = styled.section<CommonProps>`
-  margin-block: 2em;
+  padding-block: 2em;
   display: flex;
   justify-content: flex-end;
 

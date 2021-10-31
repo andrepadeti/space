@@ -2,7 +2,7 @@ import * as React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import { GlobalStyles } from 'styles/globalStyles'
-import * as S from './AppStyles.ts'
+import * as S from './AppStyles'
 import Navigation from 'components/common/header/navigation'
 import Home from 'pages/home'
 import Destination from 'pages/destination'
@@ -11,7 +11,7 @@ import Technology from 'pages/technology'
 
 function App() {
   const [path, setPath] = React.useState(window.location.pathname)
-  const handlePath = (currentPath) => {
+  const handlePath = (currentPath: string) => {
     console.log(path)
 
     setPath(currentPath)

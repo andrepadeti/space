@@ -12,20 +12,22 @@ import BgImageMobileTechnology from 'assets/technology/background-technology-mob
 import BgImageTabletTechnology from 'assets/technology/background-technology-tablet.jpg'
 import BgImageDesktopTechnology from 'assets/technology/background-technology-desktop.jpg'
 
+import { device } from 'utils/media-query'
+
 // require(`./assets${currentPage}/background-crew-mobile.jpg`).default
-const imagesMobile = {
+const imagesMobile: any = {
   '/': BgImageMobileHome,
   '/destination': BgImageMobileDestination,
   '/crew': BgImageMobileCrew,
   '/technology': BgImageMobileTechnology,
 }
-const imagesTablet = {
+const imagesTablet: any = {
   '/': BgImageTabletHome,
   '/destination': BgImageTabletDestination,
   '/crew': BgImageTabletCrew,
   '/technology': BgImageTabletTechnology,
 }
-const imagesDesktop = {
+const imagesDesktop: any = {
   '/': BgImageDesktopHome,
   '/destination': BgImageDesktopDestination,
   '/crew': BgImageDesktopCrew,
@@ -43,13 +45,13 @@ export const PageWrapper = styled.div`
   background-position: center center;
   background-size: cover;
 
-  @media (min-width: 576px) {
+  @media ${device.tablet} {
     background-image: ${(props: IPath) =>
       `url(${imagesTablet[props.currentPage]})}`};
   }
 
-  @media (min-width: 850px) {
+  @media ${device.desktop} {
     background-image: ${(props: IPath) =>
       `url(${imagesDesktop[props.currentPage]})}`};
-  } ;;
+  }
 `
