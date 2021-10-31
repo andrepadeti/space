@@ -12,7 +12,7 @@ import BgImageMobileTechnology from 'assets/technology/background-technology-mob
 import BgImageTabletTechnology from 'assets/technology/background-technology-tablet.jpg'
 import BgImageDesktopTechnology from 'assets/technology/background-technology-desktop.jpg'
 
-import { device } from 'utils/media-query'
+import { device } from 'utils/media-query-all'
 
 // require(`./assets${currentPage}/background-crew-mobile.jpg`).default
 const imagesMobile: any = {

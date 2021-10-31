@@ -14,7 +14,7 @@ const size: Dictionary = {
   lg: 992,
 }
 
-const device: MediaQueries = {
+export const device: MediaQueries = {
   mobile: `(max-width: ${size.sm}px)`,
   tablet: `(min-width: ${size.sm + 1}px) and (max-width: ${size.md}px)`,
   desktop: `(min-width: ${size.md + 1}px)`,
