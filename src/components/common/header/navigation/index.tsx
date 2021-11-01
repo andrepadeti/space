@@ -7,7 +7,7 @@ import close from 'assets/shared/icon-close.svg'
 import hamburger from 'assets/shared/icon-hamburger.svg'
 
 const Navigation = () => {
-  const [showMenu, setShowMenu] = React.useState(true)
+  const [showMenu, setShowMenu] = React.useState(false)
   const mq = useMediaQuery()
   const { isDesktop, isTablet, isMobile } = mq
 

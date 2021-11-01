@@ -5,30 +5,27 @@ import data from 'utils/data.json'
 import * as S from './index.style'
 import Image from 'components/technology/image'
 
-import desktopBackground from 'assets/technology/background-technology-desktop.jpg'
-import tabletBackground from 'assets/technology/background-technology-tablet.jpg'
-import mobileBackground from 'assets/technology/background-technology-mobile.jpg'
+// import desktopBackground from 'assets/technology/background-technology-desktop.jpg'
+// import tabletBackground from 'assets/technology/background-technology-tablet.jpg'
+// import mobileBackground from 'assets/technology/background-technology-mobile.jpg'
 
-const Technology = ({ onPath }: any) => {
-  React.useEffect(() => {
-    onPath(window.location.pathname)
-  }, [onPath])
+const Technology = () => {
   const mq = useMediaQuery()
-  const { isDesktop, isTablet, isMobile } = mq
+  // const { isDesktop, isTablet, isMobile } = mq
   const [tabIndex, setTabIndex] = React.useState(0)
   const { technology } = data
 
-  React.useEffect(() => {
-    const url = isDesktop
-      ? desktopBackground
-      : isTablet
-      ? tabletBackground
-      : mobileBackground
-    const position = isTablet || isDesktop ? 'center center' : 'bottom center'
-    document.body.style.backgroundImage = `url(${url})`
-    document.body.style.backgroundSize = 'cover'
-    document.body.style.backgroundPosition = position
-  }, [isDesktop, isTablet, isMobile])
+  // React.useEffect(() => {
+  //   const url = isDesktop
+  //     ? desktopBackground
+  //     : isTablet
+  //     ? tabletBackground
+  //     : mobileBackground
+  //   const position = isTablet || isDesktop ? 'center center' : 'bottom center'
+  //   document.body.style.backgroundImage = `url(${url})`
+  //   document.body.style.backgroundSize = 'cover'
+  //   document.body.style.backgroundPosition = position
+  // }, [isDesktop, isTablet, isMobile])
 
   const handleClick = (index: number) => {
     setTabIndex(index)

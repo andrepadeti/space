@@ -2,13 +2,10 @@ import * as React from 'react'
 import Title from 'components/common/title'
 import Stuff from 'components/home/stuff'
 
-const Home = ({ onPath }: any) => {
-  React.useEffect(() => {
-    onPath(window.location.pathname)
-  }, [onPath])
+const Home = () => {
   return (
     <div>
-      <Title title="home" />
+      <Title number='00' title="home" />
       <Stuff />
     </div>
   )
