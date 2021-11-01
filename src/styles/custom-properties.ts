@@ -29,6 +29,5 @@ export const customProperties = css`
     font-size: var(--fs-6);
     color: hsl(var(--c-white));
     background-color: hsl(var(--c-dark));
-    transition: background-image 0.2s ease-in-out;
   }
 `
