@@ -8,7 +8,7 @@ interface CommonProps {
 export const Container = styled.section<CommonProps>`
   padding-block: 2em;
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
 
   ${({ mq }) =>
     mq.isTablet &&
@@ -24,7 +24,7 @@ interface IconWrapperProps {
 }
 
 export const IconWrapper = styled.div<IconWrapperProps>`
-  flex: 1 1 1;
+  flex: 0 0 max-content; // so that icons won't shrink:
   display: flex;
   align-items: center;
   padding-inline: 3em;
@@ -45,7 +45,7 @@ export const IconWrapper = styled.div<IconWrapperProps>`
     close &&
     css`
       position: absolute;
-      top: 1em;
+      top: 2em;
       right: 0;
       justify-content: end;
     `}
@@ -61,8 +61,7 @@ export const MobileContainer = styled.section`
 `
 
 export const Line = styled.div`
-  flex: 1 1 1;
-  width: 45vw;
+  flex: 1 0 auto;
   height: 1px;
   background-color: hsl(var(--c-white) / 0.2);
   margin-block: 2.5em;
@@ -82,7 +81,6 @@ export const Navigation = styled.nav<NavigationProps>`
 `
 
 export const MenuWrapper = styled.ul<CommonProps>`
-  flex: 1 1 1;
   padding-inline: 2em;
   display: flex;
   justify-content: center;
@@ -117,7 +115,7 @@ export const MenuWrapper = styled.ul<CommonProps>`
     }
     if (mq.isDesktop) {
       return css`
-        width: 55vw;
+        flex: 0 1 38em;
       `
     }
   }}
