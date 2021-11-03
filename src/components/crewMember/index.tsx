@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import * as S from './CrewMemberStyles'
+import Description from 'components/common/description'
 
 import data from 'utils/data.json'
 
@@ -38,7 +39,7 @@ const CrewMember = () => {
         <S.MemberPosition>{crew[selectedCrewMember].role}</S.MemberPosition>
         <S.MemberName>{crew[selectedCrewMember].name}</S.MemberName>
       </S.Member>
-      <S.MemberDescription>{crew[selectedCrewMember].bio}</S.MemberDescription>
+      <Description>{crew[selectedCrewMember].bio}</Description>
     </S.CrewMemberContainer>
   )
 }
