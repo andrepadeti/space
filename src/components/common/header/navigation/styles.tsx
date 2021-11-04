@@ -127,21 +127,25 @@ export const MenuItems = styled.li`
 `
 
 export const MenuLink = styled(Link)`
-  text-decoration: none;
+  --c-underline: transparent;
+  
+  padding-block: 2rem;
   color: hsl(var(--c-white));
   font-size: var(--fs-7);
   font-family: var(--ff-sans-cond);
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  border-bottom: 2px solid var(--c-underline);
+  transition: all 0.2s ease-in-out;
 
   span {
     font-weight: bold;
     padding-inline-end: 0.5em;
   }
 
-  &:hover {
-    color: #fff;
-    background: #000;
+  &:hover,
+  &:focus {
+    --c-underline: hsl(var(--c-white) / 0.5);
   }
 `
