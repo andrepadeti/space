@@ -5,9 +5,6 @@ export const CrewWrapper = styled.div`
   padding-left: 24px;
   padding-right: 24px;
 
-  @media (min-width: 576px) {
-  }
-
   @media (min-width: 1100px) {
     padding-left: 160px;
     padding-right: 133px;

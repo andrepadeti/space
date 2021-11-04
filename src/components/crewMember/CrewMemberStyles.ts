@@ -1,13 +1,9 @@
 import styled from 'styled-components'
-import Title from 'components/common/title'
 
 export const CrewMemberContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
-  @media (min-width: 576px) {
-  }
 
   @media (min-width: 850px) {
     max-width: 1440px;
