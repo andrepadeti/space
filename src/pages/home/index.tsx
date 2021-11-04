@@ -1,13 +1,13 @@
 import * as React from 'react'
-import Title from 'components/common/title'
-import Stuff from 'components/home/stuff'
+
+import * as S from './HomeStyles'
+import HomeSection from 'components/home'
 
 const Home = () => {
   return (
-    <div>
-      <Title number='00' title="home" />
-      <Stuff />
-    </div>
+    <S.HomeWrapper>
+      <HomeSection />
+    </S.HomeWrapper>
   )
 }
 
