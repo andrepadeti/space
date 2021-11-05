@@ -4,8 +4,6 @@ import data from 'utils/data.json'
 import * as S from './index.style'
 import Image from 'components/common/image'
 
-import pic from 'assets/destination/image-europa.webp'
-
 const Destination = () => {
   const { destinations } = data
   const [tabIndex, setTabIndex] = React.useState(0)
@@ -31,12 +29,16 @@ const Destination = () => {
       <S.ContentContainer>
         <S.Title>{destinations[tabIndex].name}</S.Title>
         <S.Description>{destinations[tabIndex].description}</S.Description>
-        <S.Hr></S.Hr>
+        <S.Hr />
         <S.StatsContainer>
-          <S.StatsTitle>Avg. Distance</S.StatsTitle>
-          <S.StatsFigure>{destinations[tabIndex].distance}</S.StatsFigure>
-          <S.StatsTitle>Est. Travel Time</S.StatsTitle>
-          <S.StatsFigure>{destinations[tabIndex].travel}</S.StatsFigure>
+          <div>
+            <S.StatsTitle>Avg. Distance</S.StatsTitle>
+            <S.StatsFigure>{destinations[tabIndex].distance}</S.StatsFigure>
+          </div>
+          <div>
+            <S.StatsTitle>Est. Travel Time</S.StatsTitle>
+            <S.StatsFigure>{destinations[tabIndex].travel}</S.StatsFigure>
+          </div>
         </S.StatsContainer>
       </S.ContentContainer>
     </S.Grid>
