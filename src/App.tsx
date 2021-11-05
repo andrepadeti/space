@@ -21,6 +21,7 @@ function App() {
     document.body.style.backgroundImage = `url(${url})`
     document.body.style.backgroundSize = 'cover'
     document.body.style.backgroundPosition = position
+    document.body.style.backgroundRepeat = 'no-repeat'
   }, [location, mq])
 
   return (
