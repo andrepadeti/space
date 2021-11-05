@@ -5,7 +5,7 @@ import Description from 'components/common/description'
 
 const HomeSection = () => {
   return (
-    <>
+    <S.HomeSectionWrapper>
       <S.SubTitle>SO, YOU WANT TO TRAVEL TO</S.SubTitle>
       <S.Title>Space</S.Title>
       <Description>
@@ -15,7 +15,7 @@ const HomeSection = () => {
         experience!
       </Description>
       <S.ExploreBlock>Explore</S.ExploreBlock>
-    </>
+    </S.HomeSectionWrapper>
   )
 }
 
