@@ -6,7 +6,9 @@ interface CommonProps {
 }
 
 export const Grid = styled.main<CommonProps>`
-  padding-block-start: 2em;
+  padding-block: 2em;
+  max-inline-size: 1440px;
+  margin: 0 auto;
   display: grid;
   gap: 2em;
   grid-template-areas:
@@ -19,7 +21,7 @@ export const Grid = styled.main<CommonProps>`
   ${({ mq }) =>
     mq.isDesktop &&
     css`
-      grid-template-columns: 5rem 10rem 2fr 2fr;
+      grid-template-columns: 5rem 10vw 2fr 2fr;
       grid-template-areas:
         '. title title title'
         '. switcher content image';
@@ -48,7 +50,7 @@ interface SwitcherProps extends CommonProps {
 }
 
 export const Switcher = styled.button.attrs<SwitcherProps>(({ mq }) => ({
-  size: mq.isMobile ? '40px' : mq.isTablet ? '60px' : '80px',
+  size: mq.isMobile ? '40px' : mq.isTablet ? '60px' : 'min(80px, 7vw)',
 }))<SwitcherProps>`
   display: grid;
   place-content: center;
