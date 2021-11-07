@@ -15,7 +15,7 @@ const Navigation = () => {
     return (
       <>
         <S.MenuItems>
-          <S.MenuLink to="/">
+          <S.MenuLink exact to="/">
             <span>00</span>Home
           </S.MenuLink>
         </S.MenuItems>

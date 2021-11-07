@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 interface CommonProps {
   mq: { isMobile: boolean; isTablet: boolean; isDesktop: boolean }
@@ -126,7 +126,7 @@ export const MenuItems = styled.li`
   padding-block: 2rem;
 `
 
-export const MenuLink = styled(Link)`
+export const MenuLink = styled(NavLink)`
   --c-underline: transparent;
   
   padding-block: 2rem;
@@ -147,5 +147,9 @@ export const MenuLink = styled(Link)`
   &:hover,
   &:focus {
     --c-underline: hsl(var(--c-white) / 0.5);
+  }
+
+  &.active {
+    --c-underline: hsl(var(--c-white));
   }
 `
