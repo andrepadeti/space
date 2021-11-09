@@ -1,11 +1,13 @@
 import * as React from 'react'
+
 import * as S from './HomeStyles'
+import HomeSection from 'components/home'
 
 const Home = () => {
   return (
-    <div>
-      <S.PTitle number="00" title="home" />
-    </div>
+    <S.HomeWrapper>
+      <HomeSection />
+    </S.HomeWrapper>
   )
 }
 

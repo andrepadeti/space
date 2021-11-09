@@ -15,7 +15,7 @@ const Navigation = () => {
     return (
       <>
         <S.MenuItems>
-          <S.MenuLink to="/">
+          <S.MenuLink exact to="/">
             <span>00</span>Home
           </S.MenuLink>
         </S.MenuItems>
@@ -47,9 +47,7 @@ const Navigation = () => {
 
         {isDesktop ? <S.Line /> : null}
 
-        <nav>
-          <S.MenuWrapper mq={mq}>{renderNavigation()}</S.MenuWrapper>
-        </nav>
+        <S.MenuWrapper mq={mq}>{renderNavigation()}</S.MenuWrapper>
       </S.Container>
     )
   }

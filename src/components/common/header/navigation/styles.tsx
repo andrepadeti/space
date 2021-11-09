@@ -1,14 +1,16 @@
 import styled, { css } from 'styled-components'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 interface CommonProps {
   mq: { isMobile: boolean; isTablet: boolean; isDesktop: boolean }
 }
 
 export const Container = styled.section<CommonProps>`
+  max-width: 1440px;
+  margin: 0 auto;
   padding-block: 2em;
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
 
   ${({ mq }) =>
     mq.isTablet &&
@@ -24,7 +26,7 @@ interface IconWrapperProps {
 }
 
 export const IconWrapper = styled.div<IconWrapperProps>`
-  flex: 1 1 1;
+  flex: 0 0 max-content; // so that icons won't shrink:
   display: flex;
   align-items: center;
   padding-inline: 3em;
@@ -45,7 +47,7 @@ export const IconWrapper = styled.div<IconWrapperProps>`
     close &&
     css`
       position: absolute;
-      top: 1em;
+      top: 2em;
       right: 0;
       justify-content: end;
     `}
@@ -61,8 +63,7 @@ export const MobileContainer = styled.section`
 `
 
 export const Line = styled.div`
-  flex: 1 1 1;
-  width: 45vw;
+  flex: 1 0 auto;
   height: 1px;
   background-color: hsl(var(--c-white) / 0.2);
   margin-block: 2.5em;
@@ -82,7 +83,6 @@ export const Navigation = styled.nav<NavigationProps>`
 `
 
 export const MenuWrapper = styled.ul<CommonProps>`
-  flex: 1 1 1;
   padding-inline: 2em;
   display: flex;
   justify-content: center;
@@ -117,7 +117,7 @@ export const MenuWrapper = styled.ul<CommonProps>`
     }
     if (mq.isDesktop) {
       return css`
-        width: 55vw;
+        flex: 0 1 38em;
       `
     }
   }}
@@ -128,22 +128,30 @@ export const MenuItems = styled.li`
   padding-block: 2rem;
 `
 
-export const MenuLink = styled(Link)`
-  text-decoration: none;
+export const MenuLink = styled(NavLink)`
+  --c-underline: transparent;
+  
+  padding-block: 2rem;
   color: hsl(var(--c-white));
   font-size: var(--fs-7);
   font-family: var(--ff-sans-cond);
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  border-bottom: 2px solid var(--c-underline);
+  transition: all 0.2s ease-in-out;
 
   span {
     font-weight: bold;
     padding-inline-end: 0.5em;
   }
 
-  &:hover {
-    color: #fff;
-    background: #000;
+  &:hover,
+  &:focus {
+    --c-underline: hsl(var(--c-white) / 0.5);
+  }
+
+  &.active {
+    --c-underline: hsl(var(--c-white));
   }
 `

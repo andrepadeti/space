@@ -3,7 +3,8 @@ import useMediaQuery from 'utils/media-query-all'
 import data from 'utils/data.json'
 
 import * as S from './index.style'
-import Image from 'components/technology/image'
+import Image from 'components/common/image'
+import Description from 'components/common/description'
 
 const Technology = () => {
   const mq = useMediaQuery()
@@ -32,12 +33,14 @@ const Technology = () => {
       <S.ContentContainer mq={mq}>
         <S.Subtitle mq={mq}>The terminology...</S.Subtitle>
         <S.Title mq={mq}>{technology[tabIndex].name}</S.Title>
-        <S.Description mq={mq}>
+        {/* <S.Description mq={mq}> */}
+          <Description>
           {technology[tabIndex].description}
-        </S.Description>
+          </Description>
+        {/* </S.Description> */}
       </S.ContentContainer>
       <S.ImageContainer>
-        <Image index={tabIndex} />
+        <Image index={tabIndex} component='technology' />
       </S.ImageContainer>
     </S.Grid>
   )
