@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import * as S from './HomeStyles'
+import * as S from './styles'
 import Description from 'components/common/description'
 
 const HomeSection = () => {

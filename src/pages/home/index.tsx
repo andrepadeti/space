@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import * as S from './HomeStyles'
+import * as S from './styles'
 import HomeSection from 'components/home'
 
 const Home = () => {

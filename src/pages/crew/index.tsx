@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as S from './crewStyles'
+import * as S from './styles'
 import CrewMember from 'components/crewMember'
 
 const Crew = () => {

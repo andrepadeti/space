@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import * as S from './CrewMemberStyles'
+import * as S from './styles'
 import Description from 'components/common/description'
 
 import data from 'utils/data.json'

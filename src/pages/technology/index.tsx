@@ -2,7 +2,7 @@ import * as React from 'react'
 import useMediaQuery from 'utils/media-query-all'
 import data from 'utils/data.json'
 
-import * as S from './index.style'
+import * as S from './styles'
 import Image from 'components/common/image'
 import Description from 'components/common/description'
 

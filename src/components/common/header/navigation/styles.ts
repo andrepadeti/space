@@ -130,7 +130,7 @@ export const MenuItems = styled.li`
 
 export const MenuLink = styled(NavLink)`
   --c-underline: transparent;
-  
+
   padding-block: 2rem;
   color: hsl(var(--c-white));
   font-size: var(--fs-7);
