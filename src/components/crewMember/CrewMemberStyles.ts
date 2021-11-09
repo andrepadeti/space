@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
+import { breakpoints } from 'styles/styled-components-variables'
+
 export const CrewMemberContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 
-  @media (min-width: 850px) {
+  @media (min-width: ${breakpoints.lg}) {
     max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
@@ -27,13 +29,13 @@ export const ImageContainer = styled.div`
   width: 100%;
   border-bottom: 1px solid var(--c-gray);
 
-  @media (min-width: 576px) {
+  @media (min-width: ${breakpoints.md}) {
     order: 4;
     margin-top: 0;
     border-bottom: 0;
   }
 
-  @media (min-width: 850px) {
+  @media (min-width: ${breakpoints.lg}) {
     grid-area: image;
     max-width: 570px;
   }
@@ -41,11 +43,11 @@ export const ImageContainer = styled.div`
 export const Image = styled.img`
   width: 200px;
 
-  @media (min-width: 576px) {
+  @media (min-width: ${breakpoints.md}) {
     min-width: 28rem;
   }
 
-  @media (min-width: 850px) {
+  @media (min-width: ${breakpoints.lg}) {
     margin-top: -150px;
   }
 `
@@ -57,11 +59,11 @@ export const SwitchersList = styled.ul`
   list-style-type: none;
   margin-bottom: 27px;
 
-  @media (min-width: 576px) {
+  @media (min-width: ${breakpoints.md}) {
     order: 3;
   }
 
-  @media (min-width: 850px) {
+  @media (min-width: ${breakpoints.lg}) {
     grid-area: switchers;
     justify-content: left;
   }
@@ -82,11 +84,11 @@ export const Member = styled.h3`
   justify-content: center;
   flex-wrap: wrap;
 
-  @media (min-width: 576px) {
+  @media (min-width: ${breakpoints.md}) {
     order: 1;
   }
 
-  @media (min-width: 850px) {
+  @media (min-width: ${breakpoints.lg}) {
     grid-area: member;
     max-width: 600px;
     display: block;
@@ -104,12 +106,12 @@ export const MemberPosition = styled.span`
   color: hsl(var(--c-white));
   margin-bottom: 5px;
 
-  @media (min-width: 576px) {
+  @media (min-width: ${breakpoints.md}) {
     font-size: 1.5rem;
     margin-bottom: 20px;
   }
 
-  @media (min-width: 850px) {
+  @media (min-width: ${breakpoints.lg}) {
     text-align: left;
   }
 `
@@ -123,12 +125,12 @@ export const MemberName = styled.span`
   color: hsl(var(--c-white));
   margin-bottom: 10px;
 
-  @media (min-width: 576px) {
+  @media (min-width: ${breakpoints.md}) {
     font-size: 2.5rem;
     margin-bottom: 20px;
   }
 
-  @media (min-width: 850px) {
+  @media (min-width: ${breakpoints.lg}) {
     text-align: left;
   }
 `
