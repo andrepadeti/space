@@ -1,7 +1,7 @@
 import * as React from 'react'
 import data from 'utils/data.json'
 
-import * as S from './index.style'
+import * as S from './styles'
 import Image from 'components/common/image'
 
 const Destination = () => {
