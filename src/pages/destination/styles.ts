@@ -6,8 +6,8 @@ import PTitle from 'components/common/title'
 export const Grid = styled.main`
   padding-block: 2em;
   max-width: 1440px;
-  margin: 0 auto; 
-  
+  margin: 0 auto;
+
   display: grid;
   gap: 2em;
   grid-template-areas:
@@ -22,7 +22,6 @@ export const Grid = styled.main`
       '. title title'
       '. image switcher'
       '. image content';
-
   }
 `
 
@@ -59,7 +58,7 @@ export const Switcher = styled.li<SwitcherProps>`
 
   padding-block-end: 0.5em;
   font-family: var(--ff-sans-cond);
-  font-size: 14px;
+  font-size: var(--fs-8);
   text-transform: uppercase;
   border-bottom: 2px solid var(--c-underline);
 
@@ -104,16 +103,16 @@ export const Title = styled.h2`
 export const Description = styled.p`
   text-align: center;
   font-family: var(--ff-sans-cond);
-  font-size: 15px;
+  font-size: 0.938rem;
   font-weight: 400;
   color: hsl(var(--c-light) / 0.8);
 
   @media ${device.tablet} {
-    font-size: 16px;
+    font-size: 1rem;
   }
   @media ${device.desktop} {
     text-align: start;
-    font-size: 18px;
+    font-size: var(--fs-6);
   }
 `
 
@@ -152,7 +151,7 @@ export const StatsContainer = styled.div`
 
 export const StatsTitle = styled.h3`
   font-family: var(--ff-sans-cond);
-  font-size: 14px;
+  font-size: var(--fs-8);
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -165,7 +164,7 @@ export const StatsTitle = styled.h3`
 
 export const StatsFigure = styled.p`
   font-family: var(--ff-serif);
-  font-size: 28px;
+  font-size: var(--fs-5);
   text-transform: uppercase;
   text-align: center;
 `

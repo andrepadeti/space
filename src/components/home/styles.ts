@@ -60,7 +60,7 @@ export const ExploreBlock = styled.div`
   background-color: #fff;
   border-radius: 50%;
   font-family: var(--ff-serif);
-  font-size: 20px;
+  font-size: 1.25rem;
   letter-spacing: 1.25px;
   font-weight: normal;
   text-transform: uppercase;
